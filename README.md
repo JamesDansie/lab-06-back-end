@@ -9,9 +9,12 @@ This is the background server for city explorer. This will take in arguments fro
 
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+Copy files, and start up server.js
 
 ## Architecture
 <!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+Dependencies; Express, cors, dotenv
+Will recieve calls from the front end, and response with formatted data from the APIs
 
 ## Change Log
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an examples:
@@ -47,9 +50,20 @@ Estimate of time needed to complete: 20 minutes
 
 Start time: 10:15
 
-Finish time: 
+Finish time: 12:00
 
-Actual time needed to complete: 
+Actual time needed to complete: 1 hour 45 min 
+---
+
+Number and name of feature: Error Section
+
+Estimate of time needed to complete: 15 minutes
+
+Start time: 1:00
+
+Finish time: 1:15
+
+Actual time needed to complete: 15 minutes
 
 ## Credits and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
