@@ -15,6 +15,13 @@ function Data (searchQuery, formattedQuery, lat, lng) {
   this.longitude = lng;
 }
 
+function WeatherData(forcast, time) {
+  this.forcast = forcast;
+  let dateImput = new Date(time*1000);
+  this.time = dateImput.toString(); //seconds
+}
+
+
 app.get('', (request, response) => {
   response.send('hi');
 })
@@ -35,6 +42,27 @@ app.get('/location', (request, response) => {
 
   response.send(formattedData);
 
+})
+
+app.get('/weather', (request, response) => {
+  const darkSkyData = require('./data/darksky.json');
+  
+  let week = [];
+  let time = darkSkyData.daily.data[0].time
+  let forcast = darkSkyData.daily.data[0].summary
+
+  for(let i=0 ; i<7; i++) {
+    
+    time = darkSkyData.daily.data[i].time
+    forcast = darkSkyData.daily.data[i].summary
+    const formattedData = new WeatherData(forcast,time);
+    week.push(formattedData);
+    
+  }
+  
+  response.send(week)
+  
+  
 })
 
 app.listen(PORT, () => {console.log(`app is up and running on PORT ${PORT}`)});
